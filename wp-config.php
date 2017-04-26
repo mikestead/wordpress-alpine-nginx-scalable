@@ -14,6 +14,10 @@ foreach ($_ENV as $key => $value) {
 if (!defined('ABSPATH'))
     define('ABSPATH', dirname(__FILE__) . '/');
 
+#Load balancer https handling
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
+    $_SERVER['HTTPS'] = 'on';
+
 require_once(ABSPATH . 'wp-settings.php');
 
 
