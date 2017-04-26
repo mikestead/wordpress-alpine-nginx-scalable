@@ -1,7 +1,6 @@
 <?php
 
 define('WP_CONTENT_DIR', '/var/www/wp-content');
-define('FORCE_SSL_ADMIN', true);
 
 $table_prefix  = getenv('TABLE_PREFIX') ?: 'wp_';
 
