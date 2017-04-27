@@ -12,8 +12,8 @@ RUN chown -R www-data:www-data /usr/src/wordpress \
 VOLUME /var/www/wp-content
 
 #Wordpress wp-content files & directories
-COPY entrypoint.sh /usr/local/bin/my-entrypoint.sh
-ENTRYPOINT [ "/usr/local/bin/docker-entrypoint.sh", "my-entrypoint.sh" ]
+COPY entrypoint.sh /usr/local/bin/
+ENTRYPOINT [ "entrypoint.sh" ]
 
 #NGINX config
 COPY nginx.conf /etc/nginx/nginx.conf
